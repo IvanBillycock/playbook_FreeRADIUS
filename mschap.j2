@@ -1,0 +1,16 @@
+mschap {
+        ntlm_auth = "/usr/bin/ntlm_auth --allow-mschapv2 --request-nt-key --domain={{ domain }} --require-membership-of={{ vpn_group }}{% raw %} --username=>
+{% endraw %}
+        pool {
+                start = ${thread[pool].start_servers}
+                min = ${thread[pool].min_spare_servers}
+                max = ${thread[pool].max_servers}
+                spare = ${thread[pool].max_spare_servers}
+                uses = 0
+                retry_delay = 30
+                lifetime = 86400
+                cleanup_interval = 300
+                idle_timeout = 600
+        }
+}
+

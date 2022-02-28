@@ -1,0 +1,8 @@
+---
+domain: timepath.ru
+realm: TIMEPATH.RU
+samba_domain: TIMEPATH
+DC: timepath-samba.timepath.ru
+dc_admin_password: Passw0rd
+radius_secret: Eithaerequos2shasheimi
+vpn_group: TIMEPATH\RADIUS_VPN

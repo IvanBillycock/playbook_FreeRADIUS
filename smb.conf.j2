@@ -1,0 +1,15 @@
+[global]
+#by ansible
+#--start-line--
+
+   workgroup = {{ samba_domain }}
+   password server = {{ DC }}
+   realm = {{ realm }}
+   security = domain
+   idmap config * : range = 16777216-33554431
+   template shell = /sbin/nologin
+   kerberos method = secrets only
+   winbind use default domain = false
+   winbind offline logon = false
+
+#--end-line--
